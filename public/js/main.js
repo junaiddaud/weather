@@ -9,15 +9,17 @@ const date=document.querySelector('.today_date')
 
 window.onload=async()=>{
   console.log("hello");
-  const date_api='http://worldclockapi.com/api/json/est/now/';
+  const date_api='https://worldtimeapi.org/api/timezone/Asia/Karachi';
   const date_data=await fetch(date_api)
   .then((response) => {
     return response.json();
   })
   const arr_date=[date_data];
 console.log(arr_date);
-day.innerText=arr_date[0].dayOfTheWeek;
-const slice_date=arr_date[0].currentDateTime;
+const days=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+day.innerText=days[arr_date[0].day_of_week];
+
+const slice_date=arr_date[0].datetime;
 date.innerText=slice_date.slice(0,10);
 
 
