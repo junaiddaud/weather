@@ -9,7 +9,7 @@ const date=document.querySelector('.today_date')
 
 window.onload=async()=>{
   console.log("hello");
-  const date_api='http://worldclockapi.com/api/json/est/now';
+  const date_api='http://worldclockapi.com/api/json/est/now/';
   const date_data=await fetch(date_api)
   .then((response) => {
     return response.json();
@@ -37,7 +37,7 @@ const getInfo=async(event)=>{
  else{
  
    try{
-let url=`http://api.openweathermap.org/data/2.5/weather?q=${cityVal}&units=metric&appid=022d7fbaeffb59f7449e037713a07ac0`;
+let url=`https://api.openweathermap.org/data/2.5/weather?q=${cityVal}&units=metric&appid=022d7fbaeffb59f7449e037713a07ac0`;
  const response=await fetch(url);
  const data= await response.json();
  const str_data=[data];
